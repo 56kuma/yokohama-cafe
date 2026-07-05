@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>赤ちゃん連れカフェリスト｜横浜・東神奈川</title>
-<meta name="description" content="横浜駅・東神奈川エリアのベビーカーで行きやすいカフェ・レストラン優先リスト">
+<title>赤ちゃん連れカフェリスト｜横浜・東神奈川・みなとみらい</title>
+<meta name="description" content="横浜駅・東神奈川・みなとみらいエリアのベビーカーで行きやすいカフェ・レストラン優先リスト">
 <style>
   :root {
     --bg: #faf7f2;
@@ -48,7 +48,7 @@
   header {
     background: linear-gradient(135deg, var(--accent) 0%, #d97a6a 100%);
     color: #fff;
-    padding: 2rem 1.25rem 1.75rem;
+    padding: 2rem 1.25rem 1.5rem;
     text-align: center;
   }
   header h1 {
@@ -60,6 +60,37 @@
     font-size: 0.85rem;
     opacity: 0.92;
     margin-top: 0.35rem;
+  }
+  .filter-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 0.65rem 1rem;
+    display: flex;
+    gap: 0.45rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: center;
+  }
+  .filter-btn {
+    flex: none;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-sub);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
   }
   main {
     max-width: 640px;
@@ -148,6 +179,13 @@
     text-decoration: none;
   }
   .link-btn:active { opacity: 0.7; }
+  .hidden { display: none !important; }
+  .empty-msg {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-sub);
+    padding: 2.5rem 1rem;
+  }
   footer {
     max-width: 640px;
     margin: 2.5rem auto 0;
@@ -165,178 +203,220 @@
   <p>横浜・東神奈川・みなとみらい｜ベビーカーで行きやすい順</p>
 </header>
 
+<nav class="filter-bar" aria-label="駅で絞り込み">
+  <button class="filter-btn active" data-filter="all">すべて</button>
+  <button class="filter-btn" data-filter="yokohama">横浜</button>
+  <button class="filter-btn" data-filter="higashikanagawa">東神奈川</button>
+  <button class="filter-btn" data-filter="minatomirai">みなとみらい</button>
+</nav>
+
 <main>
 
-  <h2 class="section-title"><span class="emoji">⭐</span>優先リスト</h2>
-  <p class="section-note">ベビーカー入店のしやすさを軸にした優先順です。</p>
+  <section>
+    <h2 class="section-title"><span class="emoji">⭐</span>優先リスト</h2>
+    <p class="section-note">ベビーカー入店のしやすさを軸にした優先順です。</p>
 
-  <div class="card">
-    <div class="rank">1</div>
-    <div class="card-body">
-      <div class="card-head">
-        <h3>大戸屋 シァルプラット東神奈川店</h3>
-        <span class="place">東神奈川</span>
+    <div class="card" data-station="higashikanagawa">
+      <div class="rank">1</div>
+      <div class="card-body">
+        <div class="card-head">
+          <h3>大戸屋 シァルプラット東神奈川店</h3>
+          <span class="place">東神奈川</span>
+        </div>
+        <p>公式に「ベビーカー入店可」「チャイルドシート有」「キッズメニュー有」。</p>
+        <a class="link-btn" href="https://www.jryscc.co.jp/cial/higashikanagawa/floorguide/detail.php?store_id=87" target="_blank" rel="noopener">公式情報を見る →</a>
       </div>
-      <p>公式に「ベビーカー入店可」「チャイルドシート有」「キッズメニュー有」。</p>
-      <a class="link-btn" href="https://www.jryscc.co.jp/cial/higashikanagawa/floorguide/detail.php?store_id=87" target="_blank" rel="noopener">公式情報を見る →</a>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="rank">2</div>
-    <div class="card-body">
-      <div class="card-head">
-        <h3>kawara CAFE＆DINING 横浜店</h3>
-        <span class="place">横浜</span>
+    <div class="card" data-station="yokohama">
+      <div class="rank">2</div>
+      <div class="card-body">
+        <div class="card-head">
+          <h3>kawara CAFE＆DINING 横浜店</h3>
+          <span class="place">横浜</span>
+        </div>
+        <p>ベビーカー入店可、キッズチェア、子ども用食器あり。</p>
+        <a class="link-btn" href="https://kosodate.kufu.jp/oyako-weekend/yokohama-minatomirai/restaurants/69e4ff0d-89f0-46ba-8f4e-cacc3739425d" target="_blank" rel="noopener">詳細情報を見る →</a>
       </div>
-      <p>ベビーカー入店可、キッズチェア、子ども用食器あり。</p>
-      <a class="link-btn" href="https://kosodate.kufu.jp/oyako-weekend/yokohama-minatomirai/restaurants/69e4ff0d-89f0-46ba-8f4e-cacc3739425d" target="_blank" rel="noopener">詳細情報を見る →</a>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="rank">3</div>
-    <div class="card-body">
-      <div class="card-head">
-        <h3>鎌倉海街テーブル</h3>
-        <span class="place">横浜・そごう10F</span>
+    <div class="card" data-station="yokohama">
+      <div class="rank">3</div>
+      <div class="card-body">
+        <div class="card-head">
+          <h3>鎌倉海街テーブル</h3>
+          <span class="place">横浜・そごう10F</span>
+        </div>
+        <p>キッズスペース、離乳食、個室あり。ベビーカー入店可の口コミあり。</p>
+        <a class="link-btn" href="https://s.tabelog.com/kanagawa/A1401/A140101/14094451/" target="_blank" rel="noopener">食べログを見る →</a>
       </div>
-      <p>キッズスペース、離乳食、個室あり。ベビーカー入店可の口コミあり。</p>
-      <a class="link-btn" href="https://s.tabelog.com/kanagawa/A1401/A140101/14094451/" target="_blank" rel="noopener">食べログを見る →</a>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="rank">4</div>
-    <div class="card-body">
-      <div class="card-head">
-        <h3>Coffee and Baked Ura</h3>
-        <span class="place">東白楽／東神奈川徒歩圏</span>
+    <div class="card" data-station="higashikanagawa">
+      <div class="rank">4</div>
+      <div class="card-body">
+        <div class="card-head">
+          <h3>Coffee and Baked Ura</h3>
+          <span class="place">東白楽／東神奈川徒歩圏</span>
+        </div>
+        <p>ベビーカーごと入店OK、店内広め、オムツ替えマットあり。</p>
+        <a class="link-btn" href="https://www.gurutto-mama-yokohama.com/guruttomo/ambassador/news/report-22803.html" target="_blank" rel="noopener">レポートを見る →</a>
       </div>
-      <p>ベビーカーごと入店OK、店内広め、オムツ替えマットあり。</p>
-      <a class="link-btn" href="https://www.gurutto-mama-yokohama.com/guruttomo/ambassador/news/report-22803.html" target="_blank" rel="noopener">レポートを見る →</a>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="rank">5</div>
-    <div class="card-body">
-      <div class="card-head">
-        <h3>CAFE BLOOM</h3>
-        <span class="place">東神奈川〜東白楽</span>
+    <div class="card" data-station="higashikanagawa">
+      <div class="rank">5</div>
+      <div class="card-body">
+        <div class="card-head">
+          <h3>CAFE BLOOM</h3>
+          <span class="place">東神奈川〜東白楽</span>
+        </div>
+        <p>ベビーカー入店可、エレベーター利用可。</p>
+        <a class="link-btn" href="https://central-gakki.jp/cafe-bloom/" target="_blank" rel="noopener">公式サイトを見る →</a>
       </div>
-      <p>ベビーカー入店可、エレベーター利用可。</p>
-      <a class="link-btn" href="https://central-gakki.jp/cafe-bloom/" target="_blank" rel="noopener">公式サイトを見る →</a>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="rank">6</div>
-    <div class="card-body">
-      <div class="card-head">
-        <h3>マクドナルド シァルプラット東神奈川店</h3>
-        <span class="place">東神奈川</span>
+    <div class="card" data-station="higashikanagawa">
+      <div class="rank">6</div>
+      <div class="card-body">
+        <div class="card-head">
+          <h3>マクドナルド シァルプラット東神奈川店</h3>
+          <span class="place">東神奈川</span>
+        </div>
+        <p>公式にベビーカー入店可、チャイルドシート有、キッズメニュー有。</p>
+        <a class="link-btn" href="https://www.jryscc.co.jp/cial/higashikanagawa/floorguide/detail.php?store_id=86" target="_blank" rel="noopener">公式情報を見る →</a>
       </div>
-      <p>公式にベビーカー入店可、チャイルドシート有、キッズメニュー有。</p>
-      <a class="link-btn" href="https://www.jryscc.co.jp/cial/higashikanagawa/floorguide/detail.php?store_id=86" target="_blank" rel="noopener">公式情報を見る →</a>
     </div>
-  </div>
+  </section>
 
-  <h2 class="section-title"><span class="emoji">🔖</span>補欠</h2>
-  <p class="section-note">優先リストが混んでいた時の代替候補。</p>
+  <section>
+    <h2 class="section-title"><span class="emoji">🔖</span>補欠</h2>
+    <p class="section-note">優先リストが混んでいた時の代替候補。</p>
 
-  <div class="card">
-    <div class="rank sub">補欠</div>
-    <div class="card-body">
-      <div class="card-head">
-        <h3>tables cook &amp; LIVING HOUSE</h3>
-        <span class="place">横浜ベイクォーター4F</span>
+    <div class="card" data-station="yokohama">
+      <div class="rank sub">補欠</div>
+      <div class="card-body">
+        <div class="card-head">
+          <h3>tables cook &amp; LIVING HOUSE</h3>
+          <span class="place">横浜ベイクォーター4F</span>
+        </div>
+        <p>キッズメニュー・キッズチェア・個室あり。</p>
+        <a class="link-btn" href="https://www.yokohama-bayquarter.com/shop/detail/004070?tenant_cd=004070" target="_blank" rel="noopener">公式情報を見る →</a>
       </div>
-      <p>キッズメニュー・キッズチェア・個室あり。</p>
-      <a class="link-btn" href="https://www.yokohama-bayquarter.com/shop/detail/004070?tenant_cd=004070" target="_blank" rel="noopener">公式情報を見る →</a>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="rank sub">補欠</div>
-    <div class="card-body">
-      <div class="card-head">
-        <h3>KUBOTA食堂</h3>
-        <span class="place">東神奈川</span>
+    <div class="card" data-station="higashikanagawa">
+      <div class="rank sub">補欠</div>
+      <div class="card-body">
+        <div class="card-head">
+          <h3>KUBOTA食堂</h3>
+          <span class="place">東神奈川</span>
+        </div>
+        <p>ベビーカー可・お子様ランチありの情報あり。混雑確認推奨。</p>
+        <a class="link-btn" href="https://www.kubotashokudo-official.com/" target="_blank" rel="noopener">公式サイトを見る →</a>
       </div>
-      <p>ベビーカー可・お子様ランチありの情報あり。混雑確認推奨。</p>
-      <a class="link-btn" href="https://www.kubotashokudo-official.com/" target="_blank" rel="noopener">公式サイトを見る →</a>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="rank sub">補欠</div>
-    <div class="card-body">
-      <div class="card-head">
-        <h3>イー・エー・グラン そごう横浜店</h3>
-        <span class="place">横浜・そごう10F</span>
+    <div class="card" data-station="yokohama">
+      <div class="rank sub">補欠</div>
+      <div class="card-body">
+        <div class="card-head">
+          <h3>イー・エー・グラン そごう横浜店</h3>
+          <span class="place">横浜・そごう10F</span>
+        </div>
+        <p>ベビーカー入店OK・キッズチェアありの情報あり。</p>
+        <a class="link-btn" href="https://kosodate.kufu.jp/oyako-weekend/yokohama-minatomirai/restaurants/8f4d1265-d468-4988-8cea-44f7cea99520" target="_blank" rel="noopener">詳細情報を見る →</a>
       </div>
-      <p>ベビーカー入店OK・キッズチェアありの情報あり。</p>
-      <a class="link-btn" href="https://kosodate.kufu.jp/oyako-weekend/yokohama-minatomirai/restaurants/8f4d1265-d468-4988-8cea-44f7cea99520" target="_blank" rel="noopener">詳細情報を見る →</a>
     </div>
-  </div>
+  </section>
 
-  <h2 class="section-title"><span class="emoji">🎡</span>みなとみらい・マークイズ（候補）</h2>
-  <p class="section-note">館全体が子連れ向き。4Fに赤ちゃん休憩室（授乳室・おむつ台・給湯・電子レンジ）、3Fにキッズルーム「おやこの森」、B4〜1Fでベビーカー貸出あり。</p>
+  <section>
+    <h2 class="section-title"><span class="emoji">🎡</span>みなとみらい・マークイズ（候補）</h2>
+    <p class="section-note">館全体が子連れ向き。4Fに赤ちゃん休憩室（授乳室・おむつ台・給湯・電子レンジ）、3Fにキッズルーム「おやこの森」、B4〜1Fでベビーカー貸出あり。</p>
 
-  <div class="card">
-    <div class="rank sub">候補</div>
-    <div class="card-body">
-      <div class="card-head">
-        <h3>タリーズコーヒー マークイズみなとみらい店</h3>
-        <span class="place">マークイズ 4F</span>
+    <div class="card" data-station="minatomirai">
+      <div class="rank sub">候補</div>
+      <div class="card-body">
+        <div class="card-head">
+          <h3>タリーズコーヒー マークイズみなとみらい店</h3>
+          <span class="place">マークイズ 4F</span>
+        </div>
+        <p>赤ちゃん用のマットスペース（小上がり）があり赤ちゃん連れに人気。キッズメニュー・チャイルドシート有。4Fの赤ちゃん休憩室がすぐ近く。</p>
+        <a class="link-btn" href="https://shop.tullys.co.jp/detail/1000746" target="_blank" rel="noopener">公式店舗情報を見る →</a>
       </div>
-      <p>赤ちゃん用のマットスペース（小上がり）があり赤ちゃん連れに人気。キッズメニュー・チャイルドシート有。4Fの赤ちゃん休憩室がすぐ近く。</p>
-      <a class="link-btn" href="https://shop.tullys.co.jp/detail/1000746" target="_blank" rel="noopener">公式店舗情報を見る →</a>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="rank sub">候補</div>
-    <div class="card-body">
-      <div class="card-head">
-        <h3>みんなのフードコート</h3>
-        <span class="place">マークイズ 4F</span>
+    <div class="card" data-station="minatomirai">
+      <div class="rank sub">候補</div>
+      <div class="card-body">
+        <div class="card-head">
+          <h3>みんなのフードコート</h3>
+          <span class="place">マークイズ 4F</span>
+        </div>
+        <p>広々としたフードコートで、キッズチェアと子ども向けの低い椅子・テーブルのゾーンあり。キッズメニューのある店舗も多く、赤ちゃん休憩室と同じフロアで安心。</p>
+        <a class="link-btn" href="https://www.mec-markis.jp/mm/floor/floor_4.html" target="_blank" rel="noopener">4Fフロアガイドを見る →</a>
       </div>
-      <p>広々としたフードコートで、キッズチェアと子ども向けの低い椅子・テーブルのゾーンあり。キッズメニューのある店舗も多く、赤ちゃん休憩室と同じフロアで安心。</p>
-      <a class="link-btn" href="https://www.mec-markis.jp/mm/floor/floor_4.html" target="_blank" rel="noopener">4Fフロアガイドを見る →</a>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="rank sub">候補</div>
-    <div class="card-body">
-      <div class="card-head">
-        <h3>カフェ コクテル堂 横浜みなとみらい店</h3>
-        <span class="place">マークイズ 3F</span>
+    <div class="card" data-station="minatomirai">
+      <div class="rank sub">候補</div>
+      <div class="card-body">
+        <div class="card-head">
+          <h3>カフェ コクテル堂 横浜みなとみらい店</h3>
+          <span class="place">マークイズ 3F</span>
+        </div>
+        <p>店内が広々としていてベビーカーのまま入りやすい。同じ3Fにキッズルーム「おやこの森」があり、授乳・おむつ替えに移動しやすい。</p>
+        <a class="link-btn" href="https://www.cocktail-do.co.jp/cocktail_shop/cafe/272.html" target="_blank" rel="noopener">公式サイトを見る →</a>
       </div>
-      <p>店内が広々としていてベビーカーのまま入りやすい。同じ3Fにキッズルーム「おやこの森」があり、授乳・おむつ替えに移動しやすい。</p>
-      <a class="link-btn" href="https://www.cocktail-do.co.jp/cocktail_shop/cafe/272.html" target="_blank" rel="noopener">公式サイトを見る →</a>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="rank sub">候補</div>
-    <div class="card-body">
-      <div class="card-head">
-        <h3>J.S. PANCAKE CAFE マークイズみなとみらい店</h3>
-        <span class="place">マークイズ 1F</span>
+    <div class="card" data-station="minatomirai">
+      <div class="rank sub">候補</div>
+      <div class="card-body">
+        <div class="card-head">
+          <h3>J.S. PANCAKE CAFE マークイズみなとみらい店</h3>
+          <span class="place">マークイズ 1F</span>
+        </div>
+        <p>ソファー席とベビーチェアがあり、子連れでもゆっくり過ごしやすいパンケーキカフェ。みなとみらい駅直結フロア。</p>
+        <a class="link-btn" href="https://baycrews.jp/store/detail/0631" target="_blank" rel="noopener">公式店舗情報を見る →</a>
       </div>
-      <p>ソファー席とベビーチェアがあり、子連れでもゆっくり過ごしやすいパンケーキカフェ。みなとみらい駅直結フロア。</p>
-      <a class="link-btn" href="https://baycrews.jp/store/detail/0631" target="_blank" rel="noopener">公式店舗情報を見る →</a>
     </div>
-  </div>
+  </section>
+
+  <p class="empty-msg hidden">この駅の店舗はありません。</p>
 
 </main>
 
 <footer>
   <p>営業時間・設備は変わることがあるので、お出かけ前に公式情報の確認をおすすめします 🕊️</p>
 </footer>
+
+<script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const sections = document.querySelectorAll('main section');
+  const emptyMsg = document.querySelector('.empty-msg');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.toggle('active', b === btn));
+      const filter = btn.dataset.filter;
+      let anyVisible = false;
+
+      sections.forEach(section => {
+        let sectionHasVisible = false;
+        section.querySelectorAll('.card').forEach(card => {
+          const show = filter === 'all' || card.dataset.station === filter;
+          card.classList.toggle('hidden', !show);
+          if (show) sectionHasVisible = true;
+        });
+        section.classList.toggle('hidden', !sectionHasVisible);
+        if (sectionHasVisible) anyVisible = true;
+      });
+
+      emptyMsg.classList.toggle('hidden', anyVisible);
+    });
+  });
+</script>
 
 </body>
 </html>
