@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>赤ちゃん連れカフェマップ｜横浜・東神奈川</title>
-<meta name="description" content="横浜駅・東神奈川エリアの赤ちゃん連れで行きやすいカフェ・レストランまとめ">
+<title>赤ちゃん連れカフェリスト｜横浜・東神奈川</title>
+<meta name="description" content="横浜駅・東神奈川エリアのベビーカーで行きやすいカフェ・レストラン優先リスト">
 <style>
   :root {
     --bg: #faf7f2;
@@ -15,8 +15,8 @@
     --accent-soft: #fdeee9;
     --badge-bg: #f0e9df;
     --badge-text: #6b6156;
-    --tag-bg: #e7f2ec;
-    --tag-text: #3f7a5e;
+    --link-bg: #eef3f7;
+    --link-text: #3c6e91;
     --border: #ece5da;
     --shadow: 0 1px 3px rgba(61, 54, 48, 0.08);
   }
@@ -30,8 +30,8 @@
       --accent-soft: #3a2c26;
       --badge-bg: #38312a;
       --badge-text: #c4b8aa;
-      --tag-bg: #24362d;
-      --tag-text: #8ec7a8;
+      --link-bg: #24313a;
+      --link-text: #8db8d6;
       --border: #38312a;
       --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     }
@@ -81,6 +81,8 @@
     margin-bottom: 0.9rem;
   }
   .card {
+    display: flex;
+    gap: 0.85rem;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 14px;
@@ -88,12 +90,32 @@
     padding: 1rem 1.1rem;
     margin-bottom: 0.85rem;
   }
+  .rank {
+    flex: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.1rem;
+  }
+  .rank.sub {
+    background: var(--badge-bg);
+    color: var(--badge-text);
+    font-size: 0.65rem;
+  }
+  .card-body { flex: 1; min-width: 0; }
   .card-head {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 0.4rem 0.6rem;
-    margin-bottom: 0.4rem;
+    gap: 0.3rem 0.6rem;
+    margin-bottom: 0.35rem;
   }
   .card h3 {
     font-size: 1rem;
@@ -110,34 +132,22 @@
     padding: 0.1rem 0.6rem;
     white-space: nowrap;
   }
-  .pick {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 700;
-    background: var(--accent-soft);
-    color: var(--accent);
-    border-radius: 999px;
-    padding: 0.1rem 0.6rem;
-    white-space: nowrap;
-  }
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-    margin-bottom: 0.5rem;
-  }
-  .tag {
-    font-size: 0.7rem;
-    font-weight: 600;
-    background: var(--tag-bg);
-    color: var(--tag-text);
-    border-radius: 6px;
-    padding: 0.08rem 0.5rem;
-  }
   .card p {
     font-size: 0.85rem;
     color: var(--text-sub);
+    margin-bottom: 0.6rem;
   }
+  .link-btn {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    background: var(--link-bg);
+    color: var(--link-text);
+    border-radius: 8px;
+    padding: 0.35rem 0.85rem;
+    text-decoration: none;
+  }
+  .link-btn:active { opacity: 0.7; }
   footer {
     max-width: 640px;
     margin: 2.5rem auto 0;
@@ -151,216 +161,124 @@
 <body>
 
 <header>
-  <h1>🍼 赤ちゃん連れカフェマップ</h1>
-  <p>横浜駅・東神奈川エリア｜キッズチェア・授乳室情報つき</p>
+  <h1>🍼 赤ちゃん連れカフェリスト</h1>
+  <p>横浜・東神奈川エリア｜ベビーカーで行きやすい順</p>
 </header>
 
 <main>
 
-  <h2 class="section-title"><span class="emoji">🚉</span>横浜駅エリア</h2>
-  <p class="section-note">ベイクォーター・ルミネ・そごう・ジョイナス内。館の授乳室と組み合わせて使いやすいお店。</p>
+  <h2 class="section-title"><span class="emoji">⭐</span>優先リスト</h2>
+  <p class="section-note">ベビーカー入店のしやすさを軸にした優先順です。</p>
 
   <div class="card">
-    <div class="card-head">
-      <h3>tables cook &amp; LIVING HOUSE</h3>
-      <span class="place">ベイクォーター 4F</span>
-      <span class="pick">イチオシ</span>
+    <div class="rank">1</div>
+    <div class="card-body">
+      <div class="card-head">
+        <h3>大戸屋 シァルプラット東神奈川店</h3>
+        <span class="place">東神奈川</span>
+      </div>
+      <p>公式に「ベビーカー入店可」「チャイルドシート有」「キッズメニュー有」。</p>
+      <a class="link-btn" href="https://www.jryscc.co.jp/cial/higashikanagawa/floorguide/detail.php?store_id=87" target="_blank" rel="noopener">公式情報を見る →</a>
     </div>
-    <div class="tags">
-      <span class="tag">キッズメニュー</span><span class="tag">キッズチェア</span><span class="tag">個室あり</span><span class="tag">授乳室近く</span>
-    </div>
-    <p>個室ありで、4Fの授乳室にも近いのでかなり使いやすい。</p>
   </div>
 
   <div class="card">
-    <div class="card-head">
-      <h3>ALOHA TABLE</h3>
-      <span class="place">ベイクォーター 4F</span>
+    <div class="rank">2</div>
+    <div class="card-body">
+      <div class="card-head">
+        <h3>kawara CAFE＆DINING 横浜店</h3>
+        <span class="place">横浜</span>
+      </div>
+      <p>ベビーカー入店可、キッズチェア、子ども用食器あり。</p>
+      <a class="link-btn" href="https://kosodate.kufu.jp/oyako-weekend/yokohama-minatomirai/restaurants/69e4ff0d-89f0-46ba-8f4e-cacc3739425d" target="_blank" rel="noopener">詳細情報を見る →</a>
     </div>
-    <div class="tags">
-      <span class="tag">キッズメニュー</span><span class="tag">キッズチェア</span>
-    </div>
-    <p>広めのハワイアンカフェで家族利用向き。</p>
   </div>
 
   <div class="card">
-    <div class="card-head">
-      <h3>Butter</h3>
-      <span class="place">ベイクォーター 2F</span>
+    <div class="rank">3</div>
+    <div class="card-body">
+      <div class="card-head">
+        <h3>鎌倉海街テーブル</h3>
+        <span class="place">横浜・そごう10F</span>
+      </div>
+      <p>キッズスペース、離乳食、個室あり。ベビーカー入店可の口コミあり。</p>
+      <a class="link-btn" href="https://s.tabelog.com/kanagawa/A1401/A140101/14094451/" target="_blank" rel="noopener">食べログを見る →</a>
     </div>
-    <div class="tags">
-      <span class="tag">キッズメニュー</span><span class="tag">キッズチェア</span>
-    </div>
-    <p>パンケーキ系。甘いもの休憩に向く。</p>
   </div>
 
   <div class="card">
-    <div class="card-head">
-      <h3>ISLAND VINTAGE COFFEE</h3>
-      <span class="place">ベイクォーター 3F</span>
+    <div class="rank">4</div>
+    <div class="card-body">
+      <div class="card-head">
+        <h3>Coffee and Baked Ura</h3>
+        <span class="place">東白楽／東神奈川徒歩圏</span>
+      </div>
+      <p>ベビーカーごと入店OK、店内広め、オムツ替えマットあり。</p>
+      <a class="link-btn" href="https://www.gurutto-mama-yokohama.com/guruttomo/ambassador/news/report-22803.html" target="_blank" rel="noopener">レポートを見る →</a>
     </div>
-    <div class="tags">
-      <span class="tag">キッズメニュー</span><span class="tag">キッズチェア</span><span class="tag">テイクアウト</span><span class="tag">モーニング</span>
-    </div>
-    <p>軽めに使いやすいコーヒーショップ。</p>
   </div>
 
   <div class="card">
-    <div class="card-head">
-      <h3>Gooday Fresh Cafe</h3>
-      <span class="place">ベイクォーター 4F</span>
+    <div class="rank">5</div>
+    <div class="card-body">
+      <div class="card-head">
+        <h3>CAFE BLOOM</h3>
+        <span class="place">東神奈川〜東白楽</span>
+      </div>
+      <p>ベビーカー入店可、エレベーター利用可。</p>
+      <a class="link-btn" href="https://central-gakki.jp/cafe-bloom/" target="_blank" rel="noopener">公式サイトを見る →</a>
     </div>
-    <div class="tags">
-      <span class="tag">キッズチェア</span>
-    </div>
-    <p>スムージー、アサイーボウル、サラダ系で軽食向き。</p>
   </div>
 
   <div class="card">
-    <div class="card-head">
-      <h3>goofy coffee+diner</h3>
-      <span class="place">ベイクォーター 3F</span>
+    <div class="rank">6</div>
+    <div class="card-body">
+      <div class="card-head">
+        <h3>マクドナルド シァルプラット東神奈川店</h3>
+        <span class="place">東神奈川</span>
+      </div>
+      <p>公式にベビーカー入店可、チャイルドシート有、キッズメニュー有。</p>
+      <a class="link-btn" href="https://www.jryscc.co.jp/cial/higashikanagawa/floorguide/detail.php?store_id=86" target="_blank" rel="noopener">公式情報を見る →</a>
     </div>
-    <div class="tags">
-      <span class="tag">キッズメニュー</span><span class="tag">キッズチェア</span><span class="tag">半個室</span>
+  </div>
+
+  <h2 class="section-title"><span class="emoji">🔖</span>補欠</h2>
+  <p class="section-note">優先リストが混んでいた時の代替候補。</p>
+
+  <div class="card">
+    <div class="rank sub">補欠</div>
+    <div class="card-body">
+      <div class="card-head">
+        <h3>tables cook &amp; LIVING HOUSE</h3>
+        <span class="place">横浜ベイクォーター4F</span>
+      </div>
+      <p>キッズメニュー・キッズチェア・個室あり。</p>
+      <a class="link-btn" href="https://www.yokohama-bayquarter.com/shop/detail/004070?tenant_cd=004070" target="_blank" rel="noopener">公式情報を見る →</a>
     </div>
-    <p>食事寄りのカフェ利用に良さそう。</p>
   </div>
 
   <div class="card">
-    <div class="card-head">
-      <h3>マルモキッチン</h3>
-      <span class="place">ルミネ横浜 6F</span>
+    <div class="rank sub">補欠</div>
+    <div class="card-body">
+      <div class="card-head">
+        <h3>KUBOTA食堂</h3>
+        <span class="place">東神奈川</span>
+      </div>
+      <p>ベビーカー可・お子様ランチありの情報あり。混雑確認推奨。</p>
+      <a class="link-btn" href="https://www.kubotashokudo-official.com/" target="_blank" rel="noopener">公式サイトを見る →</a>
     </div>
-    <div class="tags">
-      <span class="tag">キッズメニュー</span><span class="tag">チャイルドチェア</span><span class="tag">駅直結</span>
-    </div>
-    <p>駅直結なので雨の日に強い。</p>
   </div>
 
   <div class="card">
-    <div class="card-head">
-      <h3>cafe locally</h3>
-      <span class="place">ルミネ横浜 7F</span>
+    <div class="rank sub">補欠</div>
+    <div class="card-body">
+      <div class="card-head">
+        <h3>イー・エー・グラン そごう横浜店</h3>
+        <span class="place">横浜・そごう10F</span>
+      </div>
+      <p>ベビーカー入店OK・キッズチェアありの情報あり。</p>
+      <a class="link-btn" href="https://kosodate.kufu.jp/oyako-weekend/yokohama-minatomirai/restaurants/8f4d1265-d468-4988-8cea-44f7cea99520" target="_blank" rel="noopener">詳細情報を見る →</a>
     </div>
-    <div class="tags">
-      <span class="tag">キッズメニュー</span><span class="tag">チャイルドチェア</span><span class="tag">駅直結</span>
-    </div>
-    <p>野菜・魚・県産食材系のカフェレストラン。</p>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <h3>Moana Kitchen Café</h3>
-      <span class="place">そごう横浜 10F</span>
-    </div>
-    <div class="tags">
-      <span class="tag">授乳個室×3</span><span class="tag">調乳設備</span><span class="tag">電子レンジ</span><span class="tag">おむつ台×6</span>
-    </div>
-    <p>ハワイアンカフェ。そごう8Fにベビーカーごと入れる授乳個室3室・調乳設備・電子レンジ・おむつ台6台があり、施設面が強い。</p>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <h3>WIRED CAFE</h3>
-      <span class="place">ジョイナス 4F</span>
-    </div>
-    <div class="tags">
-      <span class="tag">全席禁煙</span><span class="tag">ベビー休憩室近く</span>
-    </div>
-    <p>ジョイナス3Fにベビー休憩室・授乳室・給湯設備があるので、西口側なら候補。</p>
-  </div>
-
-  <h2 class="section-title"><span class="emoji">🚃</span>東神奈川エリア（候補）</h2>
-  <p class="section-note">東神奈川駅・CIAL PLAT・イオンスタイル周辺の候補。</p>
-
-  <div class="card">
-    <div class="card-head">
-      <h3>Peace</h3>
-      <span class="place">東神奈川駅 徒歩3分</span>
-      <span class="pick">一番よさそう</span>
-    </div>
-    <div class="tags">
-      <span class="tag">キッズチェア</span><span class="tag">キッズドリンク無料</span><span class="tag">Wi-Fi</span>
-    </div>
-    <p>個人店なので混雑時は事前確認が安心。</p>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <h3>コメダ珈琲店 イオン東神奈川店</h3>
-      <span class="place">イオンスタイル東神奈川 1F</span>
-    </div>
-    <div class="tags">
-      <span class="tag">ゆったり座席</span><span class="tag">授乳室あり（イオン3F）</span>
-    </div>
-    <p>座席で落ち着きやすいカフェ候補。イオン3Fの授乳室・おむつ替えに逃げられるのが強い。</p>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <h3>カンテボーレ 東神奈川店</h3>
-      <span class="place">イオンスタイル東神奈川内</span>
-    </div>
-    <div class="tags">
-      <span class="tag">イートイン</span><span class="tag">7:00〜21:00</span>
-    </div>
-    <p>パン＋ドリンクの軽め利用に。</p>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <h3>アールベイカー</h3>
-      <span class="place">CIAL PLAT東神奈川 2F/3F</span>
-    </div>
-    <div class="tags">
-      <span class="tag">駅直結</span><span class="tag">7:00〜21:00</span>
-    </div>
-    <p>駅直結で便利。2F店は34席。ベビーカーだと時間帯を選びたい。</p>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <h3>タリーズコーヒー</h3>
-      <span class="place">CIAL PLAT東神奈川 2F</span>
-    </div>
-    <div class="tags">
-      <span class="tag">駅直結</span><span class="tag">7:00〜22:00</span>
-    </div>
-    <p>駅直結の時間調整向き。</p>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <h3>大戸屋ごはん処</h3>
-      <span class="place">CIAL PLAT東神奈川 3F</span>
-    </div>
-    <div class="tags">
-      <span class="tag">チャイルドシート</span><span class="tag">ベビーカー入店可</span><span class="tag">キッズメニュー</span>
-    </div>
-    <p>カフェではないけれど、食事ならかなり安心の定食チェーン。</p>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <h3>BEAR'S DINER</h3>
-      <span class="place">東神奈川駅近く</span>
-    </div>
-    <div class="tags">
-      <span class="tag">テイクアウト可</span>
-    </div>
-    <p>アットホームなハンバーガー店。店内規模は大きくなさそうなのでベビーカーは確認推奨。</p>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <h3>ガスト 東神奈川店</h3>
-      <span class="place">東神奈川駅から約300m</span>
-    </div>
-    <div class="tags">
-      <span class="tag">7:00〜23:30</span>
-    </div>
-    <p>困った時のファミレス枠。朝から夜まで使いやすい。</p>
   </div>
 
 </main>
